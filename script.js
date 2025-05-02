@@ -77,8 +77,3 @@ audio.addEventListener("ended", () => {
     currentIndex = (currentIndex + 1) % songs.length;
     loadSong(currentIndex, true);
 });
-  
-if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('service-worker.js')
-    .then(() => console.log("Service Worker registered"));
-}
