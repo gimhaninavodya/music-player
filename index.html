@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Music Player</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="manifest" href="manifest.json" />
+  <link rel="icon" href="icons/icon-192.png" type="image/png">
+  <meta name="theme-color" content="#af52de">
+</head>
+<body>
+  <div class="mini-player">
+    <img src="images/img 1.jpg" alt="Album Cover" class="album-art" id="album-art"/>
+    
+    <div class="song-info">
+        <h3 id="title">The Song Name</h3>
+        <p id="artist">Artist Name</p>
+        <span class="heart-icon">💜</span>
+        <input type="range" id="progress-bar" value="0" max="100" step="1" class="progress-bar" />
+    </div>
+
+    <div class="controls">
+        <button id="prev-btn"><img src="images/prev.png" alt="Previous" /></button>
+        <button id="play-btn"><img src="images/play.png" alt="Play" /></button>
+        <button id="next-btn"><img src="images/next.png" alt="Next" /></button>
+      </div>
+
+    <audio id="audio"></audio>
+  </div>
+
+  <script src="songs.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
