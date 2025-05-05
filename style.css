@@ -79,11 +79,24 @@ body {
 /* ===== Heart Icon ===== */
 .heart-icon {
   position: absolute;
-  top: 10px;
+  top: 18px;
   right: 10px;
   font-size: 18px;
   color: var(--color-accent);
   cursor: pointer;
+}
+
+/* ===== Replay Button ===== */
+.replay-btn {
+  font-size: 18px;
+  position: absolute;
+  top: 10px;
+  right: 40px;
+}
+
+.replay-btn.active {
+  background-color: rgba(175, 82, 222, 0.1);
+  border-radius: 50%;
 }
 
 /* ===== Progress Bar ===== */
@@ -147,4 +160,34 @@ body {
 .controls button img {
   width: 30px;
   height: 30px;
+}
+
+/* ===== Replay Controls ===== */
+.controls-replay {
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+}
+
+.controls-replay button {
+  background: transparent;
+  border: none;
+  border-radius: 50%;
+  padding: 8px;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.2s ease;
+}
+
+.controls-replay button:hover {
+  background-color: rgba(175, 82, 222, 0.1);
+}
+
+.controls-replay button img {
+  width: 20px;
+  height: 20px;
 }

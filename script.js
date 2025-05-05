@@ -1,4 +1,5 @@
 let currentIndex = 0;
+let isReplayEnabled = false;
 
 const audio = document.getElementById("audio");
 const playBtn = document.getElementById("play-btn");
@@ -8,6 +9,7 @@ const progressBar = document.getElementById("progress-bar");
 const albumArt = document.getElementById("album-art");
 const songTitle = document.getElementById("title");
 const artistName = document.getElementById("artist");
+const replayBtn = document.getElementById("replay-btn");
 
 // Load and prepare song
 function loadSong(index, autoplay = false) {
@@ -72,8 +74,27 @@ progressBar.addEventListener("input", () => {
   }
 });
 
+replayBtn.addEventListener("click", () => {
+  isReplayEnabled = !isReplayEnabled;
+  replayBtn.style.color = isReplayEnabled ? "#AF52DE" : "black";
+
+  // Toggle visual style by adding/removing 'active' class
+  replayBtn.classList.toggle("active", isReplayEnabled);
+});
+
+
 // Auto-play next song when current one ends
 audio.addEventListener("ended", () => {
+  if (isReplayEnabled) {
+    // Add visual cue
+    replayBtn.classList.add("replaying");
+
+    // Replay the song
+    audio.currentTime = 0;
+    audio.play();
+  } else {
     currentIndex = (currentIndex + 1) % songs.length;
     loadSong(currentIndex, true);
+  }
 });
+
